@@ -1,0 +1,4 @@
+Docker Hub Repository Link:
+https://hub.docker.com/r/YOUR-DOCKERHUB-USERNAME/garden-app
+
+Replace YOUR-DOCKERHUB-USERNAME with your actual Docker Hub username after you create and push the repository.
