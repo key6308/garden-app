@@ -1,39 +1,40 @@
-"""Give gardening advice based on the month entered by the user."""
 
-# Store each month's season and gardening advice in one dictionary.
-GARDENING_ADVICE = {
-    "december": ("Winter", "Protect plants from cold weather."),
-    "january": ("Winter", "Protect plants from cold weather."),
-    "february": ("Winter", "Protect plants from cold weather."),
-    "march": ("Spring", "Start planting suitable flowers and vegetables."),
-    "april": ("Spring", "Start planting suitable flowers and vegetables."),
-    "may": ("Spring", "Start planting suitable flowers and vegetables."),
-    "june": ("Summer", "Water plants regularly."),
-    "july": ("Summer", "Water plants regularly."),
-    "august": ("Summer", "Water plants regularly."),
-    "september": ("Autumn", "Remove dead leaves and prepare plants for colder weather."),
-    "october": ("Autumn", "Remove dead leaves and prepare plants for colder weather."),
-    "november": ("Autumn", "Remove dead leaves and prepare plants for colder weather."),
+"""Give gardening advice based on the month."""
+
+MONTHLY_ADVICE = {
+    "january": "Winter gardening: Protect plants from cold weather.",
+    "february": "Winter gardening: Prepare for spring and protect plants from frost.",
+    "march": "Spring gardening: Start planting seeds and prepare your soil.",
+    "april": "Spring gardening: Water plants regularly and remove weeds.",
+    "may": "Spring gardening: Plant flowers and vegetables.",
+    "june": "Summer gardening: Water plants regularly in hot weather.",
+    "july": "Summer gardening: Keep plants watered and watch for pests.",
+    "august": "Summer gardening: Harvest ripe vegetables and keep soil moist.",
+    "september": "Autumn gardening: Plant cool-season crops and collect seeds.",
+    "october": "Autumn gardening: Remove dead plants and prepare for winter.",
+    "november": "Autumn gardening: Protect plants from frost.",
+    "december": "Winter gardening: Protect plants from cold weather.",
 }
 
 
 def get_gardening_advice(month):
-    """Return gardening advice for a valid month, or an error message."""
+    """Return gardening advice for the selected month."""
     if not isinstance(month, str):
         return "Invalid month. Please enter a valid month."
 
     month = month.strip().lower()
-    if month not in GARDENING_ADVICE:
+
+    if month not in MONTHLY_ADVICE:
         return "Invalid month. Please enter a valid month."
 
-    season, advice = GARDENING_ADVICE[month]
-    return f"{season} gardening: {advice}"
+    return MONTHLY_ADVICE[month]
 
 
 def main():
-    """Ask for a month and print the matching gardening advice."""
+    """Ask for a month and display the gardening advice."""
     month = input("Enter the current month: ")
-    print(get_gardening_advice(month))
+    advice = get_gardening_advice(month)
+    print(advice)
 
 
 if __name__ == "__main__":
